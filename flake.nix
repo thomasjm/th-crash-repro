@@ -45,13 +45,7 @@
       in
         rec {
           packages = rec {
-            inherit (pkgs) cabal2nix;
-
-            bar = (flake "ghc966" (srcWithStackYaml "stack.yaml"));
-
-            foo = (flake "ghc966" (srcWithStackYaml "stack.yaml")).packages.${exeAttr};
-
-            nixpkgsPath = pkgs.writeShellScriptBin "nixpkgsPath.sh" "echo -n ${pkgs.path}";
+            default = (flake "ghc966" (srcWithStackYaml "stack.yaml")).packages.${exeAttr};
           };
 
           inherit flake;
