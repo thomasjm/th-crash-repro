@@ -12,7 +12,15 @@
       let
         overlays = [
           haskellNix.overlay
-          (import ./nix/fix-ghc-pkgs-overlay.nix system)
+          (final: prev: {
+            hixProject = compiler-nix-name: src: extraModules:
+              final.haskell-nix.hix.project {
+                inherit src;
+                evalSystem = system;
+                inherit compiler-nix-name;
+                modules = extraModules;
+              };
+          })
         ];
 
         pkgs = import nixpkgs { inherit system overlays; inherit (haskellNix) config; };
