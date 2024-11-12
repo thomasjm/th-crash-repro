@@ -1,17 +1,7 @@
 name:                th-crash-repro
-version:             0.5.1.0
-
-extra-source-files:
-- README.md
-- CHANGELOG.md
 
 dependencies:
 - base >= 4.7 && < 5
-- lsp-types >= 2.0.0.1
-- monad-logger
-- string-interpolate
-- text
-- unliftio
 
 default-extensions:
 - OverloadedStrings
@@ -35,9 +25,6 @@ ghc-options:
 
 library:
   source-dirs: src
-  dependencies:
-  - base
-  - th-orphans
 
 executables:
   th-crash-repro:
@@ -52,3 +39,4 @@ executables:
     - -W
     dependencies:
     - aeson
+    - th-orphans
