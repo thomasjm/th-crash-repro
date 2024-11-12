@@ -1,27 +1,10 @@
-name:                th-crash-repro
+name: th-crash-repro
 
 dependencies:
 - base >= 4.7 && < 5
 
-default-extensions:
-- OverloadedStrings
-- QuasiQuotes
-- NamedFieldPuns
-- RecordWildCards
-- ScopedTypeVariables
-- FlexibleContexts
-- FlexibleInstances
-- LambdaCase
-- ViewPatterns
-- MultiWayIf
-- TupleSections
-- NumericUnderscores
-- TypeApplications
-
 ghc-options:
-- -Wunused-packages
 - -Wall
-- -fno-warn-name-shadowing
 
 library:
   source-dirs: src
